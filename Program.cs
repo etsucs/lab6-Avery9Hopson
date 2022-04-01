@@ -1,37 +1,14 @@
-﻿static char ShowCharacter(string str,int i)
-{
-    return str[i-1];
-}
-string str = "New York";
+﻿
+    Console.WriteLine(ShowCharacter("New York",2));
 
-Console.WriteLine(ShowCharacter(str,2));
 
-static double CalculatRetail(double wholeSaleCost, double markUpPercent)
-{
-    double markUpAmount = wholeSaleCost * markUpPercent;
-    double retailPrice = wholeSaleCost + markUpAmount;
 
-    return retailPrice;
-}
+    double retailPrice = CalculatRetail (5.00, 100);
+    Console.WriteLine("Retail price: " + retailPrice.ToString("0.00"));
 
-Console.Write("What is the wholesale cost?: ");
-double wholeSaleCost = Convert.ToDouble(Console.ReadLine());
-Console.Write("What is the markup percentage?: ");
-double markUp = Convert.ToDouble(Console.ReadLine());
 
-double markUpPercent = markUp / 100;
 
-double retailPrice = CalculatRetail (wholeSaleCost, markUpPercent);
-
-Console.WriteLine("Retail price: " + retailPrice.ToString("0.00"));
-
-static float Celsius(float fahrenheit)
-{
-    float celsiusConversion = (9f/5f)*(fahrenheit - 32);
-    return celsiusConversion;
-}
-
-Console.WriteLine ("Fahrenheit          Celsius");
+    Console.WriteLine ("Fahrenheit          Celsius");
     for(int i = 80;i<=100;i++)
     {
         float celsiusConversion = (float) i;
@@ -39,30 +16,45 @@ Console.WriteLine ("Fahrenheit          Celsius");
         Console.WriteLine("    "+i+"             "+Celsius(celsiusConversion));
     }
 
-bool isPrime(int n)
+
+    
+    Console.WriteLine("isPrime(5): " + isPrime(5));
+
+
+
+
+static char ShowCharacter(string str,int i)
 {
-    if(n==2)
-    return true;
+    return str[i-1];
+}
 
-    if(n==1)
-    return false;
 
-    if(n%2==0)
-    return false;
 
-    for(int i=2;i<=n/2;i++)
+static double CalculatRetail(double wholeSaleCost, double markUp)
+{
+    double markUpPercent = markUp / 100;
+    double markUpAmount = wholeSaleCost * markUpPercent;
+    double retailPrice = wholeSaleCost + markUpAmount;
+
+    return retailPrice;
+}
+
+
+
+static float Celsius(float fahrenheit)
+{
+    float celsiusConversion = (9f/5f)*(fahrenheit - 32);
+    return celsiusConversion;
+}
+
+
+
+static bool isPrime(int n)
+{
+    for(int i=2; i<=n/2; i++)
     {
         if(n%i==0)
-        return false;
+            return false;
     }
     return true;
 }
-Console.Write("Enter number: ");
-int n = Convert.ToInt32(Console.ReadLine());
-
-if(isPrime(n))
-{
-    Console.WriteLine($"{n} is a prime number.");
-}
-else
-Console.WriteLine($"{n} is not a prime number.");
